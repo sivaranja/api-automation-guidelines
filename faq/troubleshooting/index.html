@@ -1,0 +1,729 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive guide for API automation best practices and tools.">
+      
+      
+        <meta name="author" content="sivaranja">
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../utils/utils_documentation/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>FAQs - API Automation GuideLine</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-automation-custom-cases-faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="API Automation GuideLine" class="md-header__button md-logo" aria-label="API Automation GuideLine" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            API Automation GuideLine
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../utils/utils_documentation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Utilities
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="API Automation GuideLine" class="md-nav__button md-logo" aria-label="API Automation GuideLine" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    API Automation GuideLine
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q1-what-is-the-zest-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1: What is the ZEST Framework?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q2-what-are-spec-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2: What are Spec Cases?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q3-what-is-a-custom-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3: What is a Custom Case?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q4-how-to-write-custom-cases-is-there-a-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4: How to Write Custom Cases? Is There a Format?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q5-at-what-stage-should-i-write-custom-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: At What Stage Should I Write Custom Cases?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q6-what-if-i-api-developer-already-know-which-cases-need-to-be-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6: What If I (API Developer) Already Know Which Cases Need to Be Covered?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q7-where-do-i-write-and-commit-custom-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7: Where Do I Write and Commit Custom Cases?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/utils_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-automation-custom-cases-faq">API Automation – Custom Cases FAQ</h1>
+<p>This document provides clear guidance on:</p>
+<ul>
+<li>✅ When to write <strong>Spec Cases</strong></li>
+<li>✅ When to write <strong>Custom Cases</strong></li>
+<li>✅ How and where to write them</li>
+</ul>
+<hr />
+<h3 id="q1-what-is-the-zest-framework"><h2 style="color: red;font-weight=bold">Q1: What is the ZEST Framework?</h2></h3>
+<p>ZEST is our in-house automation framework that acts as an intelligent validation layer for your API development.</p>
+<div class="language-text highlight"><pre><span></span><code>🔍 Why Do You Need ZEST?
+
+    Once you develop an API, the following validations are essential:
+
+        - Are mandatory fields being validated correctly?
+        - Are invalid inputs being rejected?
+        - Is the response structure accurate?
+</code></pre></div>
+<p>ZEST helps you answer all these questions — automatically.</p>
+<p>✅ What ZEST Does for You</p>
+<p>ZEST automatically performs the following checks:</p>
+<ul>
+<li>Verifies presence and enforcement of <strong>mandatory fields</strong></li>
+<li>Validates <strong>null, empty, or incorrect</strong> values</li>
+<li>Ensures <strong>unique fields</strong> are properly handled</li>
+<li>Confirms <strong>range validations</strong></li>
+<li>Checks <strong>request and response</strong> structures</li>
+<li>Supports standard <strong>CRUD operations</strong> (Create, Read, Update, Delete)</li>
+</ul>
+<p>💡 Think of ZEST As...</p>
+<p>A reliable <strong>auto-tester</strong> that reads your <strong>spec file</strong> and validates your API implementation without requiring you to write basic validation logic.</p>
+<blockquote>
+<p><strong>Read More:</strong> <a href="https://zest-704066935.development.catalystserverless.com/app/specification/index.html" target="_blank">ZEST Specification Tool</a></p>
+</blockquote>
+<hr />
+<h3 id="q2-what-are-spec-cases"><h2 style="color: red; font-weight=bold">Q2: What are Spec Cases?</h2></h3>
+<p>✅ description: 
+    If the functionality is defined in the API specification, it is considered a Spec Case.
+    These cases are automatically handled by the ZEST framework.</p>
+<p>Zest Handles:</p>
+<ul>
+<li>Request parameter validations</li>
+<li>Error response structure validation</li>
+<li>Enum field validations</li>
+<li>Data type validations</li>
+<li>Basic CRUD validations (Create, Read, Update, Delete)</li>
+</ul>
+<hr />
+<h3 id="q3-what-is-a-custom-case"><h3 style="color: red; font-weight=bold">Q3: What is a Custom Case?</h3></h3>
+<p>A <strong>Custom Case</strong> is used to test specific business logic that is not covered by the API specification or the ZEST framework.</p>
+<p>These cases are useful when the test involves more than basic field-level validations and requires checking complex workflows, multiple steps, or feature dependencies.</p>
+<p>Examples : </p>
+<p>A field <strong>cannot be deleted</strong> if it is already used in:</p>
+<ul>
+<li>Workflow</li>
+<li>Blueprint</li>
+<li>CommandCenter</li>
+</ul>
+<p><strong>Business Hours configuration</strong>:</p>
+<ul>
+<li>Correctly handles holidays and working days</li>
+</ul>
+<p><strong>Email notifications</strong>:</p>
+<ul>
+<li>Must work correctly in <strong>Sandbox</strong> mode</li>
+</ul>
+<p>✅ Guideline</p>
+<blockquote>
+<p><strong>If your test includes multiple steps, depends on specific configurations, or represents a real business process — it should be written as a Custom Case.</strong></p>
+</blockquote>
+<p>Custom Cases give you more control to test scenarios that are specific to how a feature works in real use cases. These tests cannot be fully automated through ZEST alone.</p>
+<hr />
+<h3 id="q4-how-to-write-custom-cases-is-there-a-format"><h3 style="color: red; font-weight=bold;">Q4: How to Write Custom Cases? Is There a Format?</h3></h3>
+<p>Yes — writing a Custom Case follows a simple and consistent format.</p>
+<p>📝 Steps to Follow</p>
+<p>✅ Step 1: Read the Guide 
+- Before you start, refer to this guide: <a href="https://writer.zoho.com/writer/open/6r39c736fd41bdb3645f184660581f36bac13" target="_blank">Writing Custom Cases – Documentation Link</a></p>
+<p>✅ Step 2: Think of the Test Flow as a Simple Program
+- Break your test case into three logical parts: <strong>PreHook</strong>, <strong>Case</strong>, and <strong>PostHook</strong>.</p>
+<p>Example Use Case</p>
+<p>You are testing whether the <strong>Field Association API</strong> reflects the correct configuration after a workflow is created.</p>
+<p>Explanation of the Flow :</p>
+<p><strong>PreHook</strong>  </p>
+<ul>
+<li>Create the workflow and associate the field.</li>
+<li>This step sets up the environment before the main test runs.</li>
+</ul>
+<p><strong>Case</strong>  </p>
+<ul>
+<li>Execute the main API call (which may internally trigger the Field Association API).</li>
+</ul>
+<p><strong>PostHook</strong> </p>
+<ul>
+<li>Verify the response from the Field Association API:</li>
+<li>Is the workflow configuration included?</li>
+<li>Are the correct response keys returned?</li>
+<li>Based on the verification, mark the test case as <strong>pass</strong> or <strong>fail</strong>.</li>
+</ul>
+<p>This structure helps make your Custom Case clear, maintainable, and aligned with business logic.</p>
+<hr />
+<h3 id="q5-at-what-stage-should-i-write-custom-cases"><h3 style="color: red; font-weight=bold;">Q5: At What Stage Should I Write Custom Cases?</h3></h3>
+<p>Custom Cases are typically written <strong>after Spec Cases are completed</strong> using the ZEST framework.</p>
+<p>Overview :</p>
+<ol>
+<li>The <strong>Automation Developer</strong> first implements all applicable <strong>Spec Cases</strong> using ZEST.</li>
+<li>After the <strong>feature demo</strong>, the <strong>API Developer</strong> and <strong>Automation Developer</strong> collaborate to identify and finalize the required <strong>Custom Cases</strong>.</li>
+<li>Once Custom Cases are confirmed, development can proceed accordingly.</li>
+</ol>
+<p>✅ Quick Guideline</p>
+<ul>
+<li><strong>Spec Cases</strong> → Handled by the <strong>Automation Team</strong> using ZEST.</li>
+<li><strong>Custom Cases</strong> → Should be written by the <strong>API Developer</strong>, since you understand the business logic and feature-specific behavior best.</li>
+</ul>
+<p>This approach ensures proper test coverage for both standard validations and complex business scenarios.</p>
+<hr />
+<h3 id="q6-what-if-i-api-developer-already-know-which-cases-need-to-be-covered"><h3 style="color: red; font-weight=bold;">Q6: What If I (API Developer) Already Know Which Cases Need to Be Covered?</h3></h3>
+<p>That’s perfect — as the API Developer, you are in the best position to identify relevant test scenarios.</p>
+<p><strong>During the Demo</strong></p>
+<ul>
+<li>Share your understanding of the feature with the <strong>Automation Developer</strong>.</li>
+<li>Work together to <strong>finalize the list of Custom Cases</strong>.</li>
+</ul>
+<p>If you’re uncertain, you can request a <strong>Dummy Code Coverage Report</strong> from the Automation Team.</p>
+<p>✅ What the Dummy Report Helps You Understand</p>
+<ul>
+<li>Which <strong>Spec Cases</strong> are already covered by ZEST.</li>
+<li>Which <strong>Custom Cases</strong> are still missing.</li>
+<li>How to <strong>avoid duplicate</strong> test cases.</li>
+</ul>
+<p>✅ When This Is Especially Helpful</p>
+<ul>
+<li>The feature changes <strong>a property or value</strong> used in multiple locations.</li>
+<li>The feature was developed by <strong>multiple developers</strong>.</li>
+<li>The feature has <strong>complex workflows</strong> with conditional behaviors.</li>
+</ul>
+<p>By reviewing the dummy report, you can make sure all required test cases are properly identified and covered — without overlap.</p>
+<hr />
+<h3 id="q7-where-do-i-write-and-commit-custom-cases"><h3 style="color: red; font-weight=bold;">Q7: Where Do I Write and Commit Custom Cases?</h3></h3>
+<p>The <strong>Automation Developer</strong> will provide you with a dedicated <strong>feature branch</strong> where all relevant <strong>Spec Cases</strong> are already committed.</p>
+<p>You should add your <strong>Custom Cases</strong> on top of this branch.</p>
+<p>🔐 Branch Access</p>
+<ul>
+<li>If you <strong>do not have access</strong> to the branch, please contact the <strong>Automation Developer</strong> for permissions.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../utils/utils_documentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Utilities">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Utilities
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
