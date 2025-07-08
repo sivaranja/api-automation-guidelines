@@ -1,0 +1,5239 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive guide for API automation best practices and tools.">
+      
+      
+        <meta name="author" content="sivaranja">
+      
+      
+      
+        <link rel="prev" href="../../faq/troubleshooting/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Utilities - API Automation GuideLine</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#utilityhelper-classes-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="API Automation GuideLine" class="md-header__button md-logo" aria-label="API Automation GuideLine" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            API Automation GuideLine
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Utilities
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Utilities
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="API Automation GuideLine" class="md-nav__button md-logo" aria-label="API Automation GuideLine" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    API Automation GuideLine
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abmutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ABMUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrationutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      IntegrationUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoringrulesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScoringRulesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsystemquerydetailsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetSystemQueryDetailsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiosksutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      kiosksUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recordutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      RecordUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiselectrelatedlistsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      MultiSelectRelatedListsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criteriautiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      CriteriaUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sortutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      SortUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resetconfigurationutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResetConfigurationUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FieldsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ModuleUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portalsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      PortalsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projectsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProjectsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approvalprocesscreationutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ApprovalProcessCreationUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surveyutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      SurveyUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wizardssectionsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WizardsSectionsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emailtemplatesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      EmailTemplatesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infovalidatorutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      InfoValidatorUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowrulesrecordvalidationsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowRulesRecordValidationsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowrulesdependentrequestutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowRulesDependentRequestUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowrulesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowRulesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shifthoursutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ShiftHoursUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usersutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      UsersUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sandboxusersutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      SandboxUsersUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvasviewutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      CanvasViewUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesizefieldincreaseutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileSizeFieldIncreaseUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldscommonutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FieldsCommonUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldsmxncaseutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FieldsmxnCaseUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldslimitexceedcaseutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FieldsLimitExceedCaseUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamicfieldsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      DynamicFieldsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recordssearchutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      RecordsSearchUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timelinescommonutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      TimelinesCommonUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowruleutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowRuleUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compositeutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      CompositeUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userstransferutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      UsersTransferUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getrelatedrecordscountutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetRelatedRecordsCountUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadencesbodyutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      CadencesBodyUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadencesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      CadencesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portalsutiljava_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PortalsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulkreadutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      BulkReadUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocdatautiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      VOCDataUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocforecastsutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      VOCForecastsUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sandboxutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      SandboxUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphqlutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      GraphQLUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      FilesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profilesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProfilesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhooksutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebhooksUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulkwriteutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      BulkWriteUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      PagesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ziaorgenrichmentutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZiaOrgEnrichmentUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharingrulesutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      SharingRulesUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emailsignatureutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      EmailSignatureUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zdkrequestutiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZDKRequestUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zdkziputiljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZDKZipUtil.java
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="utilityhelper-classes-documentation">Utility/Helper Classes Documentation</h1>
+<h2 id="abmutiljava">ABMUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/abm/orchestrations/ABMUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setDefault_account_config_details</td>
+<td>Map<String, String> default_account_config_details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setDefault_contact_config_details</td>
+<td>Map<String, String> default_contact_config_details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setDefault_product_config_details</td>
+<td>Map<String, String> default_product_config_details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setDefault_deal_config_details</td>
+<td>Map<String, String> default_deal_config_details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDefaultTransition</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>activateABM</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>activateAccount</td>
+<td>String resourceName, String method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkIfResourceExist</td>
+<td>String resourceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkABMConfigured</td>
+<td>boolean activate</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSegment</td>
+<td>Map<String, Map\<String, String>> segmentCriteria, String basedOn</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBody</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateConfiguration</td>
+<td>String resourceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadFields</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadRL</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deactivateABM</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createOrchestrations</td>
+<td>String segmentId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateOrchestration</td>
+<td>String orchestrationId, Map<String, Map\<String, String>> transition, List<String> fromState</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getOrchestrationBody</td>
+<td>String orchestrationId, Map<String, Map\<String, String>> transition, List<String> fromState</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createStates</td>
+<td>String module, String orchestrationId, int noOfStates</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getStateBody</td>
+<td>String module, String orchestrationId, int noOfStates</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTransitionBody</td>
+<td>String orchestrationId, List<String> toState, List<String> fromState, JSONArray default_transition_triggers</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createDraftOrchestration</td>
+<td>String segmentId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteOrchestrations</td>
+<td>String ids</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getOrchestrationsBody</td>
+<td>String segmentId, String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="integrationutiljava">IntegrationUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/scoringrules/IntegrationUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enableOrDisableVisitsModule</td>
+<td>ResourceHandler handler, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableOrDisableVOC</td>
+<td>ResourceHandler handler, boolean enable</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableOrDisableWebinar</td>
+<td>ResourceHandler handler, boolean enable</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableOrDisableCampaigns</td>
+<td>ResourceHandler handler, boolean enable</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableSurveyIntegraion</td>
+<td>boolean enable, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSurveyBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPortal</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scoringrulesutiljava">ScoringRulesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/scoringrules/ScoringRulesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createScoringRule</td>
+<td>JSONObject body, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getScoringRules</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRuleById</td>
+<td>String id, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRule</td>
+<td>Key key, String id, ResourceHandler resourceHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllScoringRules</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>runScoringRules</td>
+<td>String module, String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>runDailyScheduler</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteVOCData</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAvailableSources</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>linkSources</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getmoduleConfiguration</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteModuleConfiguration</td>
+<td>String module, String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSignal</td>
+<td>String nameSpace, String signalName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createExtension</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getVersion</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setVersion</td>
+<td>String ver</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTouchPointRuleCallsGroupBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTouchPointRulesBody</td>
+<td>String module, String groupName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRules</td>
+<td>String groupName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTouchPointRuleCallsDurationBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldRulesBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getScoringRuleBody</td>
+<td>String type, String module, String ziaScoreType, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getManualRuleBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getZiaScoringRuleBody</td>
+<td>String module, String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCriteriaJSON</td>
+<td>Map<String, Object> fieldOJ</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getChildModuleCriteria</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getsystemquerydetailsutiljava">GetSystemQueryDetailsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/bulk/GetSystemQueryDetailsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreateField</td>
+<td>String fieldsUrlBuilder, String method, String module, String lookupFieldName, String parentModuleField, String lookupModuleField, String lookupModule</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>recordCase</td>
+<td>URLBuilder urlBuilder, String lookupModuleField, String parentFieldValue, String parentModuleField, String lookupFieldName, boolean setField, String recordId</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kiosksutiljava">kiosksUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/kiosks/kiosksUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createkiosks</td>
+<td>JSONObject kiosksBody, String kiosksName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getkiosksInfoById</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getkiosksGetRecordById</td>
+<td>String kiosksId, JSONObject kiosksGetRecordBodyJson, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createkiosksState</td>
+<td>String kiosksId, JSONObject kiosksStateBodyJson, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteKiosks</td>
+<td>List<String> kioskIds, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getStateTransitionId</td>
+<td>String kiosksId, String stateId, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createScreenWithCustomFieldState</td>
+<td>String kiosksId, String kiosksName, String getRecordName, String fieldName, String transitionId, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getkiosksStateJsonBody</td>
+<td>String transitionId, String getRecordId, String fieldId, String fieldName, String processId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>constructGetRecordsJson</td>
+<td>String moduleNm, String getRecordName, String moduleId, String moduleName, String fieldId, String fieldName</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordutiljava">RecordUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/record/RecordUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createAndGetRecordId</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRequiredModuleLayoutFields</td>
+<td>String module, String layoutId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsByType</td>
+<td>String module, String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordId</td>
+<td>String module, String operationName, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModulesByType</td>
+<td>String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>executeRecordOperation</td>
+<td>String module, String operationName, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordUrlBuilder</td>
+<td>String module, String id, String operationName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRecords</td>
+<td>String module, int count, Key key, Boolean isMandatory</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordById</td>
+<td>String module, String id, Map<String, String> params</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRelatedRecords</td>
+<td>String module, String id, String relatedModule, Map<String, String> params</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCustomViewFields</td>
+<td>String cvid, DataManager dataManager, Map<String, Object> details, Key key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCustomViewCriteriaPath</td>
+<td>String module, String cvId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTerritoryCriteriaPath</td>
+<td>String territoryId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateCriteria</td>
+<td>Case c, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; response, String dataPath, String paramName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getMandateBodyBuilder</td>
+<td>Operation operation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBodyBuilder</td>
+<td>Operation operation, boolean mandateOnly</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getContent</td>
+<td>Operation operation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCasesForMatchingCriteria</td>
+<td>String resourceName, URLBuilder urlBuilder, DataManager dataManager, String moduleName, Key key, String dataPath</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateInventryModule</td>
+<td>Case c, Map<String, Object> storeDataMap, JSONPath jsonPath, String keyName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>verifyItems</td>
+<td>Map<String, Object> storeDataMap, Case c, String keyName, JSONPath jsonPath</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateRecord</td>
+<td>String module, String recordId, JSONObject reqBody</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>orderProperties</td>
+<td>String module, List&lt;Property&lt;?&gt;&gt; properties</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateOrders</td>
+<td>String module, List&lt;Property&lt;?&gt;&gt; properties, Map<String, Integer> changeProps</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModules</td>
+<td>DataManager dataManager, String cudPath, boolean isDelete, Object...args</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRecord</td>
+<td>String module, String recordId, OAuth2 auth, boolean needToDeleteInDataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isPropertyPresent</td>
+<td>Map<String, List\<String>> map, String prop, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isPropertyPresentInSet</td>
+<td>Map<String, Set\<String>> map, String prop, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isPropertyPresentInList</td>
+<td>List<Map\<String, String>> list, String prop</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>cleanUpRecords</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRecordsAtParticularModule</td>
+<td>String module, Resource recordResource, Operation deleteRecordsOperation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAllRecordIdsAtParticularModule</td>
+<td>String module, Resource recordResource, Operation getRecordsOperation, Authorization auth</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiselectrelatedlistsutiljava">MultiSelectRelatedListsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/multiselect_relatedlist/MultiSelectRelatedListsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deleteMsRelatedLists</td>
+<td>List<String> ids, String parentModule, String caseName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getConnectedRelatedIds</td>
+<td>List<String> ids, String parentModule, String content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createMsRelatedLists</td>
+<td>int count, String parentModule, String connectedModule, String content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createMsRlUsingWrap</td>
+<td>String module, String connectedModule</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRelatedListsCount</td>
+<td>String parentModule, String type, String content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRelatedListsCountByFieldEnabled</td>
+<td>String parentModule, String type, String content, boolean fieldEnabled</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBody</td>
+<td>String parentModule, String connectedModule, Integer linkingModuleVisiblity</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUniqueString</td>
+<td>String name, Map<String, String> bodyMap, String api_name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRelatedRecords</td>
+<td>String module, String recordId, String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadRL</td>
+<td>List<String> modules</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="criteriautiljava">CriteriaUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/util/CriteriaUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isTypeNeeded</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setUserLookupType</td>
+<td>UserLookupType userLookupType</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setFieldsFilter</td>
+<td>Predicate<Map\<String, Object>> fieldsFilter</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>changeDataTypeAccordingToSupportedComparators</td>
+<td>List<Map\<String, Object>> fields, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataTimeValues</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getpicklistValues</td>
+<td>Map<String,Object> field</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPicklistPropName</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRegex</td>
+<td>String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateMaps</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataManager</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sortutiljava">SortUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/util/SortUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validateSort</td>
+<td>boolean sortOrder, JSONPath path, LinkedList<Object> list, Case c, boolean isInteger</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>secondaryCheck</td>
+<td>String source, String target</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resetconfigurationutiljava">ResetConfigurationUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/util/ResetConfigurationUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applyResetConfiguration</td>
+<td>String name, String... args</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateArgs</td>
+<td>String name, String[] args, int expectedCount</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResetConfiguration</td>
+<td>Map<String, String> params</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getISCSignature</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableFeature</td>
+<td>String featureName, Boolean isEnable</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fieldsutiljava">FieldsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/coql/FieldsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getFields</td>
+<td>String module,int limit, String data_type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordData</td>
+<td>String module, String field, String data_type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSkipFields</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="moduleutiljava">ModuleUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/module/ModuleUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isCustomModule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isLinkingModule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isSubformModule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSubformParentModule</td>
+<td>String subformModule</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModuleIdByAPIName</td>
+<td>String module, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getGeneratedTypeOfModule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>fireModulesGet</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>fireModulesGetAll</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModuleMeta</td>
+<td>String module, String key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteModule</td>
+<td>String moduleName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCustomModules</td>
+<td>List<String> deleteModules</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCustomModule</td>
+<td>String moduleName, Resource modulesResource, Operation deleteModuleOperation, DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getMandateModuleBody</td>
+<td>String singularLabel, String pluralLabel, List<String> profileIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCustomModule</td>
+<td>String module, Operation getModuleOperation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModulesBody</td>
+<td>String singularLabel, String pluralLabel, List<String> profileIds, Map<String, Object> otherKeys</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getGetModuleOperation</td>
+<td>Resource modulesResource</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCustomModules</td>
+<td>Resource modulesResource, Operation getModuleOperation, Map<String, Map\<String, Object>> modulesCreationMap, boolean neetToStoreModules</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModuleId</td>
+<td>ResourceHandler resourceHandler , String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="portalsutiljava">PortalsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/projects/PortalsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createPortal</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPortal</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="projectsutiljava">ProjectsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/projects/ProjectsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createProject</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProject</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="approvalprocesscreationutiljava">ApprovalProcessCreationUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/approvals_actions/ApprovalProcessCreationUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createSequentialRejectionThreeApprovalProcess</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getApprovalDetails</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordModification</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsDelegateCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId, OAuth2 token</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsSubformApproveCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approverecordwithdataForNoFields</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsRejectWithoutTakeOverCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId, boolean isStdUser</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsRejectCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsApproveCurrentStageCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsApproveWithoutTakeOverCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId, boolean isStdUser</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalActionsApproveCase</td>
+<td>URLBuilder urlBuilder, ResourceHandler handler, Operation operation, boolean b, String recordId, List<String> fieldsName, String approvalId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createParallelApprovalProcessNoFields</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSequentialApprovalProcess</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSequentialApprovalProcessWithRolesGroupsApprover</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createParallelApprovalProcess</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createParallelApprovalProcessWithRolesGroupsApprover</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteApprovalProcess</td>
+<td>boolean enable</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createParallelApprovalProcessWithAnyoneConfig</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getISCSignature</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecord</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createApprovalProcessWithoutProcessAdmin</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createApprovalProcess</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>approvalRecord</td>
+<td>String id, String module, JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="surveyutiljava">SurveyUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/digest/SurveyUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPortalConfiguration</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableSurvey</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>removeModuleIntegration</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableModuleIntegration</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>disableSurvey</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wizardssectionsutiljava">WizardsSectionsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/wizard/WizardsSectionsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>updateSequenceNumber</td>
+<td>String module, JSONObject exWizard, String caseName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getQueryComponentsBody</td>
+<td>String moduleName, String fieldName, String fieldId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFields</td>
+<td>Set<String> fieldIds, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFieldBody</td>
+<td>int count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWizardElementLimitBody</td>
+<td>Set<String> fieldIds, String moduleName, String wizardName, String wizardModuleId, String layoutId, String profileId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSection</td>
+<td>String sectionName, String referenceId, Iterator<String> fieldIterator, int sequenceNumber</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWizardWithSubformJSON</td>
+<td>String module, String moduleId, String layoutId, String profileId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWizardJSON</td>
+<td>String module, String caseName, String wizardModuleId, String layoutId, String profileId, String profileName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProfilePath</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModuleLayoutProfileInfo</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFields</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWizard</td>
+<td>CWrap wrap, boolean isCreate</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWizard</td>
+<td>JSONObject wizardBody</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateWizard</td>
+<td>JSONObject updateWizard, String wizardId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWizards</td>
+<td>String wizardId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>buildChartData</td>
+<td>boolean isCreate, String screenId, String screenLabel</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSegmentBase</td>
+<td>String displayLabel, int sequenceNumber, String type, String content, String reference_id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRelatedFieldSegment</td>
+<td>String displayLabel, int sequenceNumber, String reference_id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFieldSegment</td>
+<td>String displayLabel, int sequenceNumber, String[] fieldNames</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createTextLabelSegment</td>
+<td>String displayLabel, String content, int sequenceNumber</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createButtonSegment</td>
+<td>String displayLabel, int sequenceNumber, int customButtonSequence</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateUpdateWizardJson</td>
+<td>String module, JSONObject exwizard, String queryComponentId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldIdByDisplayLabel</td>
+<td>String displayLabel</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>conditionalRuleJson</td>
+<td>String module, JSONObject exWizard, String caseName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateRandomReferenceId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateLimitExceedJSON</td>
+<td>String module, JSONObject exwizard, int segmentCount, String caseName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateMutipleSegmentJson</td>
+<td>String module, JSONObject exwizard</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getwizardV9Body</td>
+<td>String wizardname, String module_name, String module_id, String profile_name, String profile_id, String layout_id, String fieldId, String fieldName</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="emailtemplatesutiljava">EmailTemplatesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/email_templates/EmailTemplatesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="infovalidatorutiljava">InfoValidatorUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/related_records/InfoValidatorUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validateInfoDetails</td>
+<td>Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflowrulesrecordvalidationsutiljava">WorkflowRulesRecordValidationsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/workflows/WorkflowRulesRecordValidationsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validationRecordforActionExecution</td>
+<td>String ruleId, CWrap cwrap, APICall call</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateWorkflowActions</td>
+<td>Map<String, Object> recordActionVsRecordId, String ruleId, String actionType, String module, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateEmailAction</td>
+<td>String module, String recordId, String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateFieldUpdate</td>
+<td>String module, String recordId, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateTaskCreation</td>
+<td>String module, String recordId, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateWebhook</td>
+<td>String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateCircuits</td>
+<td>String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateRecordCreation</td>
+<td>String module,JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateScheduleCallCreation</td>
+<td>String module,JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateAddMeedtingCreation</td>
+<td>String module, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateRecordConversion</td>
+<td>String module, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateAddTags</td>
+<td>String module, String recordId, JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateRemoveTags</td>
+<td>String module, String recordId,JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>extractIds</td>
+<td>JSONArray jsonArray</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldMappingasJSON</td>
+<td>JSONObject action</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateFunctions</td>
+<td>String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>combineAllCriteria</td>
+<td>JSONObject executeWhen, JSONArray conditions</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>handleCriteriaObject</td>
+<td>JSONObject criteria, JSONArray combinedGroups</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>isSingleCondition</td>
+<td>JSONObject criteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>buildCriteriaMatchingRecord</td>
+<td>JSONObject record, JSONObject criteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processGroups</td>
+<td>JSONArray groups, JSONObject record</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processCondition</td>
+<td>JSONObject criteria, JSONObject record</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRecord</td>
+<td>String module,Key key, JSONObject combinedCriteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateRecord</td>
+<td>String module,Key key, JSONObject combinedCriteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRecord</td>
+<td>String recordId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWorkflowUsage</td>
+<td>String actionType, String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecord</td>
+<td>String moduleName, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordForMatchedValue</td>
+<td>String moduleName, String fieldName, String fieldValue</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getMatchedRecordId</td>
+<td>JSONObject data, String fieldName, String fieldValue</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRelatedRecord</td>
+<td>String moduleName, String recordId, String relatedModule</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordBody</td>
+<td>URLBuilder urlbuilder, Key key, Operation operation, JSONObject combinedCriteria</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflowrulesdependentrequestutiljava">WorkflowRulesDependentRequestUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/workflows/WorkflowRulesDependentRequestUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enableModule</td>
+<td>String name, String status, ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteScoringRules</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFieldUpdates</td>
+<td>List<String> fieldupdateIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldUpdates</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTasks</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWorkflowTasks</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateEmailTemplates</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateScoringRules</td>
+<td>String module, ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFields</td>
+<td>ResourceHandler handler, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getLayouts</td>
+<td>ResourceHandler handler, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWorkflowConfigurations</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWorkflowRules</td>
+<td>String ruleId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateEmailNotifications</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateFieldUpdate</td>
+<td>String module,int count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateWorkflowTasks</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateRecommendation</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWebhooks</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAssignmentRules</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteEmailNotifications</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRecommendation</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteEmailTemplates</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateCircuits</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCircuits</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateGDPR</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>disableGDPR</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateFunction</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateFunction</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFunctions</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateAutomationsFunction</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllAutomationFunctions</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllWorkflowRules</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWorkflowRules</td>
+<td>Key key, String id, ResourceHandler resourceHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProfile</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createTeamModule</td>
+<td>String moduleName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteTeamModule</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflowrulesutiljava">WorkflowRulesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/workflows/WorkflowRulesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getStaticConditions</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWorkFlowRule</td>
+<td>List<String> ids, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getConditionWithSchedule</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWithCriteriaConditions</td>
+<td>String module, JSONObject criteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWithConditionsBody</td>
+<td>String module, JSONObject criteriaDetailsJO</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateActionBody</td>
+<td>String module, JSONObject actionJO, String actionType</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAvailablePeriod</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getMinutesUnit</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getActions</td>
+<td>List<Map\<String, Object>> triggers, String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>combinedExecuteWhenandCondition</td>
+<td>JSONObject executeWhen, List<JSONObject> conditions, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableModule</td>
+<td>String name, String status, ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getEmailTemplatesBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getEmailNotificatitions</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getScoringRuleBody</td>
+<td>String module, ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecommendationBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createPrivacyPreferenceQuery</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCriteria</td>
+<td>List<Map\<String, Object>> fields, String groupOperator, int groupCount, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTasksBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getValue</td>
+<td>String dataType, Map<String, Object> field</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRegex</td>
+<td>String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>handleException</td>
+<td>Exception e</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWorkflowRules</td>
+<td>JSONObject body,String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDynamicFieldBody</td>
+<td>String expression, String return_type,String fieldName</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shifthoursutiljava">ShiftHoursUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/shifthours/ShiftHoursUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createShiftHours</td>
+<td>String domain, Authorization auth, JSONObject shiftHourBody</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteShiftHour</td>
+<td>String shiftId, String domain, Authorization auth</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usersutiljava">UsersUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/user/UsersUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPrimaryUser</td>
+<td>Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPrimaryUserEmail</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUserEmailBasedOnType</td>
+<td>String type, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUserIdsByType</td>
+<td>String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createUser</td>
+<td>String type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>disableUser</td>
+<td>String id, Key key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteUser</td>
+<td>String id, Key key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>changeUserProfile</td>
+<td>String userID, String profileName</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sandboxusersutiljava">SandboxUsersUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/user/SandboxUsersUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createSandboxDeveloperUser</td>
+<td>String type, Integer count, String profile</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>increaseUserAdditionLimit</td>
+<td>String actionType, Integer count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteSandboxById</td>
+<td>String sandboxId, OAuth2 productionUser, Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>fetchSandboxDetails</td>
+<td>String url</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSandboxDetails</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteSandbox</td>
+<td>JSONArray sandboxIdArr, Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>CreateAndGetSandbox</td>
+<td>Url url, URLBuilder urlBuilder, Key key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createUserWithtype</td>
+<td>String type, String userType, String profile</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canvasviewutiljava">CanvasViewUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/canvas_views/CanvasViewUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createCanvasView</td>
+<td>JSONObject body,String module,OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateCanvasViewById</td>
+<td>JSONObject body, String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCanvasView</td>
+<td>String module, String id,OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCanvasViewById</td>
+<td>String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getVersion</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setVersion</td>
+<td>String ver</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="filesizefieldincreaseutiljava">FileSizeFieldIncreaseUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/field/FileSizeFieldIncreaseUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createField</td>
+<td>String module, String datatype, String fieldLabel</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getImageorFileUploadFieldObject</td>
+<td>String datatype, String fieldLabel</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResetConfiguration</td>
+<td>Map<String, String> params, JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllFields</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getISCSignature</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fieldscommonutiljava">FieldsCommonUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/field/FieldsCommonUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setVersion</td>
+<td>String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPicklistValueApiName</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUnsupportedFields</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCreateFieldHook</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Content content, String module, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsBodyByDataType</td>
+<td>String datatype, String fieldName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCreateFieldsHook</td>
+<td>JSONObject body, String module, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>bulkCreateFieldHook</td>
+<td>JSONObject body, String module, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUpdateFieldHook</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, String module, String id, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateField</td>
+<td>JSONObject body, String module, String id, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldHook</td>
+<td>String module, String id, OAuth2 auth, String domain, String key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldValueByKey</td>
+<td>String module, String inputKey, String inputValue, String returnKey</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFieldHook</td>
+<td>String module, String fieldId, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteHook</td>
+<td>String module, String fieldId, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setdeletion</td>
+<td>CWrap wrap, String fieldId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>APICall call</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteField</td>
+<td>String fieldId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enablePickListFieldTracker</td>
+<td>String module, String pickListFieldId, int followingFieldsCount, String followingFieldsIdentifier</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPicklistFieldTrackerPostBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createPickListField</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPickListFieldBody</td>
+<td>JSONObject body, String fieldName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>disablePickListFieldTracker</td>
+<td>String module, String picklistId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>executeCallWrap</td>
+<td>String module, JSONObject body, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadField</td>
+<td>List<String> modules</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsBuilder</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>displayFieldInReport</td>
+<td>String module, String id, String description</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>executeCall</td>
+<td>String module, JSONObject body, String method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUniqueName</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPicklistFieldTrackerBody</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getVal</td>
+<td>String module, String apiName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createField</td>
+<td>int n, String module, String type, List<String> fieldName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>pushFieldsToReport</td>
+<td>String module, String caseDescription</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createEncryptField</td>
+<td>String module, String type, String identifier</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableOrDisableVisitsModule</td>
+<td>ResourceHandler handler, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCustomFields</td>
+<td>String module, boolean needToStoreFields, Resource fieldsResource, Operation getFieldsOperation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldBody</td>
+<td>String module, String apiName, String dataType, Map<String, Object> otherKeys</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFieldsAndGetId</td>
+<td>String module, JSONObject fieldsBody</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFieldHook</td>
+<td>String module, JSONObject fieldsBody</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getField</td>
+<td>String apiName, String dataType, Map<String, Object> otherKeys, List<Map\<String, Object>> existingFields, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCustomFields</td>
+<td>Map<String, List\<String>> modulesAndcustomFieldsMap</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCustomFieldsOnAModule</td>
+<td>String module, List<String> fields, Resource fieldsResource, Operation deleteFieldsOperation, ExecutorService executor</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCustomField</td>
+<td>String fieldId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsMeta</td>
+<td>String module, String apiName, String key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>pushReport</td>
+<td>String module, String type, String content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getMsLookupBody</td>
+<td>String connectedModule, String moduleLookupField, String connectedModuleLookupField</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSpecificFieldDataType</td>
+<td>String module, String dataType</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsUrl</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllCustomFields</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFields</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createLookupField</td>
+<td>String name, String lookupModule, Integer length, String displayLabel</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFieldBody</td>
+<td>String name, String dataType, Integer length</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fieldsmxncaseutiljava">FieldsmxnCaseUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/field/FieldsmxnCaseUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDatatypes</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFields</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Content content, String module, OAuth2 authToken</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>delField</td>
+<td>String id, String module, OAuth2 authToken</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFields</td>
+<td>String id, String module, Operation operation, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>Updateprofile</td>
+<td>String id, JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>buildCase</td>
+<td>Url url, URLBuilder urlBuilder, List<LinkedHashMap\<Argument, Object>> arguments, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Operation operation, Content content, String caseidentifier, String caseName, String caseDescription, boolean isError, String errorCode, int statusCode, Key key, String module, String dataType, OAuth2 auth, GroupHandler groupHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProfileRequestBody</td>
+<td>String profileId, Boolean isenable, List<String> permissionNames</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProfileId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createLayoutClone</td>
+<td>String module, String layoutName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteLayouts</td>
+<td>String layoutId,String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fieldslimitexceedcaseutiljava">FieldsLimitExceedCaseUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/field/FieldsLimitExceedCaseUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generateLimitExceedCase</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>buildAndExecuteLimitExceedCase</td>
+<td>String module,List<Case> cases</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>APICall call</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCountOfExtraFieldsToBeCreated</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createFields</td>
+<td>String module,Integer count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateRequestBodies</td>
+<td>Integer count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateRequestBody</td>
+<td>Integer count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateCWrapRequestBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCreatedFields</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFieldIds</td>
+<td>List<String> ids, String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynamicfieldsutiljava">DynamicFieldsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/field/DynamicFieldsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setVersion</td>
+<td>String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUser</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCreateFieldHook</td>
+<td>JSONObject body, String module, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUpdateFieldHook</td>
+<td>JSONObject body, String module, String id, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteField</td>
+<td>String module, String id, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteFieldHook</td>
+<td>String module, String fieldId,OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setdeletion</td>
+<td>CWrap wrap, String fieldId, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>APICall call</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldIds</td>
+<td>String identifier, List<Object> fieldLabels,String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAllFields</td>
+<td>OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteReports</td>
+<td>String reportName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableFeature</td>
+<td>String featureName,Boolean isEnable</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordssearchutiljava">RecordsSearchUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/records_search/RecordsSearchUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getCriteriaValues</td>
+<td>Map<String,List\<Map\<String,Object>>> datatypeVsfield, Map<String,List\<Map\<String,Object>>> encdatatypeVsfield,List<Map\<String,Object>> specialField, Map<String,Map\<String,Object>> apinameVsfield, Map<String, Object> record, boolean singleCriteria</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRandomValues</td>
+<td>String data_type, List<Object> values</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertValues</td>
+<td>String type, String comp, String api_name, List<Object> values</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertLongValue</td>
+<td>String comp, String api_name, String longV</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertStringValue</td>
+<td>String comp, String api_name, String strList</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertBooleanValue</td>
+<td>String comp, String api_name, Boolean booleanVal</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertDoubleValue</td>
+<td>String comp, String api_name, Object doubl</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertIntegerValue</td>
+<td>String comp, String api_name, String integ</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertDateValue</td>
+<td>String comp, String api_name, String dateVal</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertDateTimeValue</td>
+<td>String comp, String api_name, String dateTimeVal</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProcessedString</td>
+<td>String unprocess</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timelinescommonutiljava">TimelinesCommonUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/timelines/TimelinesCommonUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreatePicklistField</td>
+<td>String module, String fieldLabel, String[] options</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPickListObject</td>
+<td>String fieldLabel, String[] options</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflowruleutiljava">WorkflowRuleUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/timelines/WorkflowRuleUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createWorkFlowRule</td>
+<td>String module, String emailNotificationId, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWorkFlowRule</td>
+<td>List<String> ids, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getWorkFlowRuleBody</td>
+<td>String moduleName, String moduleId, String emailNotificationId</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="compositeutiljava">CompositeUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/composite/CompositeUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getAllResources</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getInstance</td>
+<td>Automation automation, Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>addCase</td>
+<td>Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCase</td>
+<td>Number key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>generateSubCases</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRequestBuilder</td>
+<td>Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSubCase</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getListGetCase</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="userstransferutiljava">UsersTransferUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/users_transfer/UsersTransferUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getUserBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createUser</td>
+<td>JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteUser</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getrelatedrecordscountutiljava">GetRelatedRecordsCountUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/get_related_records_count/GetRelatedRecordsCountUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>associateRecord</td>
+<td>Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRelatedRecord</td>
+<td>String relatedListName, String module, String recordId, JSONObject requestBody, boolean converted, boolean approved, Case c</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateReportingContacts</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>linkAccountAndContact</td>
+<td>String contactId, String accountId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateStageHistory</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateInvitees</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateSystemRL</td>
+<td>String relatedModule, String module, String recordId, String relatedListName, String relatedFieldName, JSONObject requestBody, boolean converted, boolean approved</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateChildCampaigns</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateChildAccounts</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateTasksAndTasksHistory</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateEventsAndEventsHistory</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateCallsAndCallsHistory</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>associateNotes</td>
+<td>String relatedModule, String module, String recordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecord</td>
+<td>String relatedModuleName, String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>convertRecord</td>
+<td>String relatedModuleName, String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateRecordUnderApprovalProcedd</td>
+<td>String relatedModuleName, String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFields</td>
+<td>String relatedModuleName</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cadencesbodyutiljava">CadencesBodyUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/cadences_execution/CadencesBodyUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>taskAllActionCadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>emailAllActionCadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>callAllActionCadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>combinationCadenceBody</td>
+<td>String module, String cadenceName, String subjectName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>automaticTaskAllActionCadenceBody</td>
+<td>String module, String cadenceName, String customViewId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>automaticEmailAllActionCadenceBody</td>
+<td>String module, String cadenceName, String customViewId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>automaticCallAllActionCadenceBody</td>
+<td>String module, String cadenceName, String customViewId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createTemplates</td>
+<td>String moduleName, String subject</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCustomViewId</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>callCadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>cadenceWithoutFollowup</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>emailSimpleCadenceBody</td>
+<td>String module, String cadenceName, String subject</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>callSimpleCadenceBody</td>
+<td>String module, String cadenceName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCommonCallCadence</td>
+<td>String name, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createCustomViewBody</td>
+<td>String fieldName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>addIdToList</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cadencesutiljava">CadencesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/cadences_execution/CadencesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createCadence</td>
+<td>JSONObject body, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteCadence</td>
+<td>String id, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>unenrollRecord</td>
+<td>JSONObject requestBody, String module, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enrollRecord</td>
+<td>JSONObject requestBody, String module, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>publishCadence</td>
+<td>String id, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>activateCadence</td>
+<td>String id, OAuth2 auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>addId</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="portalsutiljava_1">PortalsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/portals/PortalsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>updateSAMLConfiguration</td>
+<td>String mandateKey, String portalName, Key key, URLBuilder urlBuilder, BodyBuilder bodyBuilder, String caseDescription, Integer statusCode, boolean disableSAMLConfiguration</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkCase</td>
+<td>ResourceValidator resourceValidator, int status, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; dataMap, JSONPath path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deletePortalCase</td>
+<td>String portalName, Key key, BodyBuilder bodyBuilder, String caseDescription, Integer statusCode</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deletePortalForm</td>
+<td>String portalId, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createPortalForm</td>
+<td>String emailId, String userId, boolean activeState, String version, List<String> portalformIds, boolean includeFormSections</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUserTypeID</td>
+<td>String portalName, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSAMLConfiguration</td>
+<td>String portalName, Authorization authorization, Domain domain, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setUserTypeId</td>
+<td>Case _case,String portalName, String resource, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateUserTypesWithField</td>
+<td>Authorization authorization, Domain domain, String version, String portalName, String fieldId, String userTypeId, Key key, Resource resource1, boolean isActive</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldId</td>
+<td>JSONArray fieldsArray, String columnName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldIdbyColumnName</td>
+<td>Authorization authorization, Domain domain, String version</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createPortalCase</td>
+<td>String portalName, Key key, BodyBuilder bodyBuilder, String caseDescription, Integer statusCode, boolean portalNullCase</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bulkreadutiljava">BulkReadUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/bulk_read/BulkReadUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getDefaultNotSupportedModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSupportedModules</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCriteriaMap</td>
+<td>HashMap<String, String> criFields, String module, int length</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getHiddenModules</td>
+<td>boolean checkProfilePermission, boolean isAboveV5</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>addCases</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body ,URLBuilder _urlBuilder, ArrayList<Case> cases, String serviceHeader, String caseName, String description, int status, PostHookWrap postHook</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>executeCase</td>
+<td>URLBuilder urlBuilder1, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Resource resource, String caseName, String description</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBodyBuilder</td>
+<td>Operation operation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPicklistValueApiName</td>
+<td>DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getComparator</td>
+<td>ArrayList<String> types, String caseName, String field</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>execute</td>
+<td>Case c, String url, Method method, String jobId, int minLength, String name, String resourceName, String auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResource</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setGroupHandler</td>
+<td>String jobId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDetails</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getContent</td>
+<td>Operation operation</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vocdatautiljava">VOCDataUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/voc/util/VOCDataUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>doDIVOCEmailInsert</td>
+<td>DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>sendSurvey</td>
+<td>DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getContent</td>
+<td>Key lockerKey, DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getContactKey</td>
+<td>DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vocforecastsutiljava">VOCForecastsUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/voc/VOCForecastsUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getFieldIds</td>
+<td>String identifier, List<String> fieldLabels, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkVocEnabled</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableVocConfiguration</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>addSourceSettings</td>
+<td>HashMap<String, Object> dataHM</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSourceSettingsBody</td>
+<td>String moduleConfigID, String noteContentId, String parentId, String createdTmId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getModuleConfiguratorId</td>
+<td>HashMap<String, Object> dataHM</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createForeCastConfiguration</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForeCastConfiguration</td>
+<td>String forecastType</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForeCastConfigDetails</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForecastConfigJsonBody</td>
+<td>String modelId, String hierarchyId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createForeCast</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForeCast</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForeCastBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createAnalyticForVOC</td>
+<td>HashMap<String, Object> dataHM</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAnalyticBody</td>
+<td>String forecastID, String vocConfigId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBucket</td>
+<td>String label, String value, String stageVar</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFilters</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>buildComponentJson</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteAnalyticForVOC</td>
+<td>String dashboardId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getTriggerComputationBody</td>
+<td>String forecastId, String vocConfigId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createTriggerComputation</td>
+<td>String dashboardId, String foreCastId, String vocId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateTriggerComputation</td>
+<td>String dashboardId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCurrentMonthFiscalId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCurrentMonthAndYear</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createDeal</td>
+<td>String contactId, String accountId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDealJsonBody</td>
+<td>String contactId, String accountRecordId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCurrentDateFormatted</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateDeal</td>
+<td>String dealId, String stage</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRecords</td>
+<td>Map<String, List\<String>> recordsList</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getForecastAnalyticsDashboardId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAnalyticsComponentId</td>
+<td>String dashboardId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getAnalyticsComponentData</td>
+<td>String dashboardId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUpdateDealJsonBody</td>
+<td>String stage</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getNoteJSONBody</td>
+<td>String parent_id, String module, String noteContent</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>AssociateNote</td>
+<td>String module, String recordId, String noteContent</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRecord</td>
+<td>int recordCnt, String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sandboxutiljava">SandboxUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/sandbox/SandboxUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deployChanges</td>
+<td>String sandboxId, List<String> changeIds, String domain, Authorization auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSandbox</td>
+<td>String prodDomain, String sandboxName, OAuth2 prodAuth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSandboxAndSkipTemplates</td>
+<td>String prodDomain,String sandboxName, OAuth2 prodAuth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkSandboxasActive</td>
+<td>Case currentCase, String prodDomain, String sandboxName, OAuth2 prodAuth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteSandbox</td>
+<td>String sandBoxId, OAuth2 prodAuth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>rebuildChanges</td>
+<td>String sandboxId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateChanges</td>
+<td>String sandboxId, List<String> changeIds, String domain, Authorization auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createField</td>
+<td>String module, String fieldName, String dataType, Authorization authorization, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>executeCall</td>
+<td>String module, Authorization authorization, String domain, JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFieldsBody</td>
+<td>String fieldName, String dataType, String parentModule, String childModule</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSandboxBody</td>
+<td>String source, List<String> modulesList, String userId, String recordCount, String type, String sandboxName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getOnlyChangeIds</td>
+<td>String sandboxId, String domain, Authorization auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createLookupField</td>
+<td>String lookupName, String rLName, String parentModule, String childModule, Authorization auth, String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateFieldPresence</td>
+<td>Case rCase, String domain, Authorization auth, String env, Map<String, List\<String>> details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateRelatedListsPresence</td>
+<td>Case rCase, String domain, OAuth2 auth, String env, Map<String, List\<String>> details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateFieldValue</td>
+<td>Case rCase, String domain, Authorization auth, String env, Map<String, Map\<String, Map\<String, Object>>> details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateRelatedListsValue</td>
+<td>Case rCase, String domain, OAuth2 auth, String env, Map<String, Map\<String, Map\<String, Object>>> details</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>validateValue</td>
+<td>Object reqVal, Object resVal, Case rCase, String fieldPath</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSandBoxAuth</td>
+<td>OAuth2 productionAuth, String prodDomain, String orgId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUserId</td>
+<td>String type, String type__s, OAuth2 prodAuth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSandboxBodySkipTemplates</td>
+<td>String source, List<String> modulesList, String userId, String recordCount, String type, String sandboxName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createSubMenu</td>
+<td>String apiName, String key</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUniqueName</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPreHandle</td>
+<td>URLBuilder urlBuilder, String domain, OAuth2 auth, boolean enableNewFlow</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPostHandle</td>
+<td>URLBuilder urlBuilder, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSandboxAuthAsTicket</td>
+<td>IAMTicket iamTicket, String sandboxOrgId</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graphqlutiljava">GraphQLUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/graphql/GraphQLUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getSchema</td>
+<td>String domain, Authorization authorization, String introspectionQuery</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>HttpRequest httpRequest</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getResourceToWriteReport</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getCaseDescription</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="filesutiljava">FilesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/files/FilesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPrimaryFileIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadFilesAndImages</td>
+<td>File[] files</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadFiles</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPrimaryImageIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPrimaryLargeImageIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFileId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getImageId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFilesPath</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getLargeImageId</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getFileIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getImageIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getLargeImageIdSupplier</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="profilesutiljava">ProfilesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/profiles/ProfilesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getProfileIdByName</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>cloneProfileAndGetId</td>
+<td>String cloneProfileName, String profileName</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteProfile</td>
+<td>String id, String transfer_to,boolean isRemove</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="webhooksutiljava">WebhooksUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/webhooks/util/WebhooksUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createWebhook</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWebhook</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bulkwriteutiljava">BulkWriteUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/bulkwrite/BulkWriteUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>doGetWriter</td>
+<td>String csv, String method, String module, Charset charset</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDetails</td>
+<td>String path, DataManager dataManager</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processResource</td>
+<td>DataManager dataManager, String module, String method, String char_encode, HashMap&lt;Property&lt;?&gt;, Object&gt; map, ArrayList<String> subresource, ArrayList<Object> recordsarr</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processSubformResource</td>
+<td>DataManager dataManager, Optional<HashMap\<String, Object>> subform, String method, Charset charset, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; singleResource, ArrayList&lt;LinkedHashMap&lt;Property&lt;?&gt;, Object&gt;&gt; resourceObj, ArrayList<String> csvs, HashMap<String, Object> parentIndexes</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processMSLResource</td>
+<td>DataManager dataManager, Optional<HashMap\<String, Object>> msl, String method, Charset charset, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; singleResource, ArrayList&lt;LinkedHashMap&lt;Property&lt;?&gt;, Object&gt;&gt; resourceObj, ArrayList<String> csvs, HashMap<String, Object> parentIndexes</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>doWriteSubformCSVFile</td>
+<td>String fileStore, String csv, String module, String method, Charset charset, ArrayList<HashMap\<String, Object>> moduleFields, ArrayList<Object> records, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; clonedResource, HashMap<String, Object> parentIndexes, ArrayList<String> recordIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>doWriteMSLCSVFile</td>
+<td>String fileStore, String csv, String module, String method, Charset charset, List<HashMap\<String, Object>> moduleFields, ArrayList<Object> records, LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; clonedResource, String parentapiname, HashMap<String, Object> parentIndexes, ArrayList<String> recordIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateParentCSV</td>
+<td>CSVWriter writer, ArrayList<HashMap\<String, Object>> moduleFields, HashMap<String, String> apinameVsHeader, HashMap<String, HashMap\<String, Object>> apinameVsField, ArrayList<Object> list, String method, String module, ArrayList<String> recordIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>populateSubformCSV</td>
+<td>CSVWriter writer, List<HashMap\<String, Object>> moduleFields, HashMap<String, String> apinameVsHeader, HashMap<String, HashMap\<String, Object>> apinameVsField, ArrayList<Object> list, String method, String module, String lookupColumn, ArrayList<String> indexValues, ArrayList<String> recordIds</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>processAndGetValues</td>
+<td>Entry<String, String> field, LinkedHashMap<String, Object> record, ArrayList<String> values, HashMap<String, HashMap\<String, Object>> apinameVsField</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>doSkipProcess</td>
+<td>String api_name, String module, String data_type</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordsBody</td>
+<td>DataManager dataManager, String method, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBody</td>
+<td>BodyBuilder bodyBuilder, URLBuilder urlBuilder, Resource resource, String method, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSuccessBody</td>
+<td>BodyBuilder bodyBuilder, URLBuilder urlBuilder, Resource resource</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getContent</td>
+<td>Operation operation</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>uploadRequest</td>
+<td>DataManager dataManager, String fileStore, ArrayList<String> csvs, String method, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>compressFile</td>
+<td>String fileStore, String zip, ArrayList<String> csv</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setRecordsCount</td>
+<td>String module, int count</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getRecordsCount</td>
+<td>String module</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pagesutiljava">PagesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/pages/PagesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPage</td>
+<td>Map<String,String>map,String description</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPagebyId</td>
+<td>Map<String,String>map,String description,String pageid</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ziaorgenrichmentutiljava">ZiaOrgEnrichmentUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/zia_org_enrichment/ZiaOrgEnrichmentUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createEnrich</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Content content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>UpdateEnrich</td>
+<td>String configId,LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Content content</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createorgEnrich</td>
+<td>JSONObject body, Content content,String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createPeopleEnrich</td>
+<td>LinkedHashMap&lt;Property&lt;?&gt;, Object&gt; body, Content content,String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteEnrich</td>
+<td>List<String> ids</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getEnrich</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>peopleExtension</td>
+<td>String action</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sharingrulesutiljava">SharingRulesUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/sharingrules/SharingRulesUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createSharingRule</td>
+<td>JSONObject body,String module,OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateRuleById</td>
+<td>JSONObject body, String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateRules</td>
+<td>JSONObject body, String module, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>activateRule</td>
+<td>String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deactivateRule</td>
+<td>String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRuleById</td>
+<td>String module, String id, OAuth2 auth,String domain</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getVersion</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>setVersion</td>
+<td>String ver</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="emailsignatureutiljava">EmailSignatureUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/email_signature/EmailSignatureUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createSignatureId</td>
+<td>int n, Case parentCase, ResourceHandler resourceHandler, String userId, String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getBody</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getEmail</td>
+<td>OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getDataPath</td>
+<td>String path, ResourceHandler resourceHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteEmailSignature</td>
+<td>String id, ResourceHandler resourceHandler, Case parentCase, OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getSignatureId</td>
+<td>RequestBuilder requestBuilder, ResourceHandler resourceHandler, String userID</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>enableOrDisableImapConfig</td>
+<td>boolean status, Method method</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>updateCode</td>
+<td>String orgEmailId, String code</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createOrgEmail</td>
+<td>List<String> profileIds, String email</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteOrgEmail</td>
+<td>String email, String transferToId, ResourceHandler resourceHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getEmailBody</td>
+<td>List<String> profileIds, String email</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getProfiles</td>
+<td>None</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getComposeApi</td>
+<td>String caseDescription</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getOtherAuth</td>
+<td>String userId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getUser</td>
+<td>OAuth2 auth</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteSignIfEmailIsMapped</td>
+<td>String emailr, OAuth2 auth, ResourceHandler resourceHandler</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>loadFromAddress</td>
+<td>ResourceHandler handler</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zdkrequestutiljava">ZDKRequestUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/zdk/ZDKRequestUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deleteModule</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createModule</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteField</td>
+<td>String id, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createField</td>
+<td>String name, String module</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteProfile</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createProfile</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteRole</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createRole</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteWidget</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createWidget</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>deleteLayout</td>
+<td>String id</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>createLayout</td>
+<td>String name</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zdkziputiljava">ZDKZipUtil.java</h2>
+<div class="language-text highlight"><pre><span></span><code>path : src/main/java/com/zoho/crm/spec/automation/custom/zdk/ZDKZipUtil.java
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createZip</td>
+<td>String filePath, String zipFolderName, String zipFileName, JSONObject body</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkIsSchedulerCompleted</td>
+<td>String jobId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>getPushResult</td>
+<td>String jobId</td>
+<td>No description available</td>
+</tr>
+<tr>
+<td>checkIstheFilePresent</td>
+<td>String string</td>
+<td>No description available</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../faq/troubleshooting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                FAQs
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

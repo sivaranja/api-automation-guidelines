@@ -1,0 +1,18 @@
+/* Reduce body text size */
+.md-typeset {
+    font-size: 14px;
+  }
+  
+  /* Optional: reduce heading sizes */
+  .md-typeset h1 {
+    font-size: 24px;
+  }
+  
+  .md-typeset h2 {
+    font-size: 20px;
+  }
+  
+  .md-typeset h3 {
+    font-size: 18px;
+  }
+  

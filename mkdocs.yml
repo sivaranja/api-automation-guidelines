@@ -1,0 +1,63 @@
+site_name: API Automation GuideLine
+site_description: A comprehensive guide for API automation best practices and tools.
+site_author: sivaranja
+theme: 
+  name: material
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - navigation.footer
+    # primary: indigo
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+extra_css:
+  - stylesheets/custom.css
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        'faq.html': 'faq/general.html'
+
+nav:
+  - Home: index.md
+  - FAQs: faq/troubleshooting.md
+  - Utilities: utils/utils_documentation.md
+    # - CLI Tool: utils/cli-tool.md
+    # - API Helpers: utils/api-helpers.md
+    # - Migration Tools: utils/migration-tools.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
